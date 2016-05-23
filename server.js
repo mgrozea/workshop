@@ -7,14 +7,16 @@ function start(route, handlers) {
         var pathname = url.parse(request.url).pathname;
         console.log("Request for " + pathname + " received.");
 
-        route(pathname, handlers, response);
-       /* request.addListener("data", function(postDataChunk) {
-
+        request.setEncoding("utf8");
+        request.addListener("data", function(postDataChunk) {
+            postData += postDataChunk;
+            console.log("Received POST data chunk '"+
+                postDataChunk + "'.");
         });
 
         request.addListener("end", function() {
-
-        });*/
+            route(pathname, handlers, response, postData);
+        });
     }).listen(8888);
 
     console.log("Server has started.");

@@ -1,3 +1,5 @@
+var querystring = require("querystring");
+
 function home(response){
 	console.log("Request handler 'home' was called.");
 
@@ -19,11 +21,12 @@ function home(response){
 	response.end();
 }
 
-function about(response) {
+function about(response, postData) {
+	console.log(postData);
 	response.writeHead(200, {
 		"Content-Type": "text/plain"
 	});
-	response.write("You are right! ");
+	response.write("You are right! " + querystring.parse(postData).text);
 	response.end();
 }
 
