@@ -1,8 +1,8 @@
 function route(pathname, handlers){
 	if (typeof handlers[pathname] === 'function'){
-		handlers[pathname]();
+		return handlers[pathname]();
 	} else {
-		console.log("404 Not found");
+		return "404 Not found";
 	}
 }
 
