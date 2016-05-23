@@ -1,8 +1,12 @@
-function route(pathname, handlers){
+function route(pathname, handlers, response){
 	if (typeof handlers[pathname] === 'function'){
-		return handlers[pathname]();
+		handlers[pathname](response);
 	} else {
-		return "404 Not found";
+		response.writeHead(404, {
+			"Content-Type": "text/plain"
+		});
+		response.write("404 Not found");
+		response.end();
 	}
 }
 
