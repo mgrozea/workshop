@@ -1,6 +1,7 @@
 # workshop
 
 For this workshop, please have installed node and git.
+
 You will need a IDE to write the code. It can be Sublime, Brackets or Intellij.
 
 Clone this repository using command: git clone https://github.com/mgrozea/workshop.git
