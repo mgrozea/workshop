@@ -1,5 +1,4 @@
 function home(response){
-	var content = 'empty';
 	setTimeout(function(){
 		response.writeHead(200, {
 			"Content-Type": "text/plain"
@@ -10,7 +9,6 @@ function home(response){
 }
 
 function about(response) {
-	var content = 'empty';
 	response.writeHead(200, {
 		"Content-Type": "text/plain"
 	});
